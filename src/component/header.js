@@ -10,7 +10,7 @@ const HeaderC = ({navigation,heading,Cart},props) => {
         <View>
              <StatusBar backgroundColor={colors.background} barStyle={colors.stutsbarContent} />
         <Header
-        
+
         containerStyle={{
           height:40,
           backgroundColor: 'transparent',
@@ -19,8 +19,8 @@ const HeaderC = ({navigation,heading,Cart},props) => {
         }}
         centerComponent={{ text: heading, style: {fontSize:20, color: colors.color,fontFamily:'Montserrat-Bold' } }}
 
-          leftComponent={{ icon: 'menu', color: colors.themeC, 
-          onPress:()=>{navigation.openDrawer()}
+          leftComponent={{ icon: 'menu', color: colors.themeC,
+          // onPress:()=>{navigation.openDrawer()}
          }}
           rightComponent={
           <View><Icon  name='shoppingcart'
