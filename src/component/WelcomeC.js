@@ -26,13 +26,13 @@ const WelcomeC = ({navigation,user}) => {
             }}>{user== "" ? "": user.user.name.toUpperCase()}</Text>
           </View>
 
-          <View style={{ flex: 1, flexDirection: 'row-reverse', height: 100 }} >
-            <Avatar
-              rounded
-              size="large"
-              source={user== "" ? (require('../../assets/profile.jpg')): {uri:user.user.avatar.url}}
-            />
-          </View>
+          {/*<View style={{ flex: 1, flexDirection: 'row-reverse', height: 100 }} >*/}
+          {/*  <Avatar*/}
+          {/*    rounded*/}
+          {/*    size="large"*/}
+          {/*    source={user== "" ? (require('../../assets/profile.jpg')): {uri:user.user.avatar.url}}*/}
+          {/*  />*/}
+          {/*</View>*/}
 
         </View>
       </View>

@@ -7,6 +7,7 @@ import ButtonC from '../../../component/Button';
 import { gql } from "apollo-boost";
 import { Mutation } from 'react-apollo';
 import Toast from 'react-native-simple-toast';
+import AsyncStorage from '@react-native-community/async-storage';
 const Reg = gql`
 mutation REGISTER_USER($input: RegisterUserInput!) {
 	registerUser(input: $input) {
@@ -55,6 +56,16 @@ class Register extends Component {
 			this.setState({ll:false})
 		});
 
+
+}
+
+sendEmail=(registerUser)=>{
+		const mail={
+			mail:this.state.email,
+		}
+		AsyncStorage.setItem('Key',JSON.stringify(mail));
+           this.RegNow(registerUser)
+
 }
 	render() {
 		return (
@@ -93,7 +104,7 @@ class Register extends Component {
 
 					/>
 
-					<GButton loading={this.state.ll} Text={'SIGN UP'} onPress={() => this.RegNow(registerUser)} />
+					<GButton loading={this.state.ll} Text={'SIGN UP'} onPress={() => this.sendEmail(registerUser)} />
 				</View>)}</Mutation>
 				<ButtonC Text={'LOGIN ?'} onPress={() => this.props.navigation.navigate('Login')} />
 			</View>

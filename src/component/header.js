@@ -1,8 +1,10 @@
+
 import {  Header, Icon ,Badge} from "react-native-elements";
-import { View,StatusBar,Text} from "react-native";
+import { View,StatusBar,Text,TouchableOpacity} from "react-native";
 import colors from '../colors.json'
 import React, { Component } from "react";
 import {connect } from 'react-redux'
+import { DrawerActions } from 'react-navigation'
 
 const HeaderC = ({navigation,heading,Cart},props) => {
   console.log(props)
@@ -19,9 +21,7 @@ const HeaderC = ({navigation,heading,Cart},props) => {
         }}
         centerComponent={{ text: heading, style: {fontSize:20, color: colors.color,fontFamily:'Montserrat-Bold' } }}
 
-          leftComponent={{ icon: 'menu', color: colors.themeC,
-          // onPress:()=>{navigation.openDrawer()}
-         }}
+        leftComponent={<TouchableOpacity onPress={()=>navigation.openDrawer()}><Icon name={'menu'} color={colors.themeC}/></TouchableOpacity>}
           rightComponent={
           <View><Icon  name='shoppingcart'
           type='antdesign'

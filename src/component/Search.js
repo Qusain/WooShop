@@ -8,7 +8,7 @@ class SearchC extends Component {
         super(props)
         this.state = {
             search: '',
-         
+
           }
     }
     updateSearch = search => {
@@ -28,7 +28,7 @@ class SearchC extends Component {
               shadowOpacity: 0.22,
               shadowRadius: 2.22,
               backgroundColor: colors.background,
-              elevation: 3, borderWidth: 0.1, marginLeft: 10, marginRight: 10, height: 45,  borderRadius: 30, borderColor: colors.color
+              elevation: 3, borderWidth: 0.1, marginLeft: 10, marginRight: 10, height: 45,  borderRadius: 30, borderColor: colors.color,marginBottom:10,marginTop:5
             }}
             inputContainerStyle={{ height: 50, borderWidth: 0, top: -10 }}
             placeholder="Type Here..."

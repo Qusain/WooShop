@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from 'react-native-snap-carousel';
-import { Dimensions,ActivityIndicator,View,Text} from 'react-native';
+import { Dimensions,ActivityIndicator,View,Text,} from 'react-native';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import colors from '../../../../colors.json';

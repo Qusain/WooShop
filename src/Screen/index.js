@@ -8,4 +8,6 @@ import Checkout from './App/Checkout'
 import Cate from './App/Categories'
 import CatDetail from './App/Catedetail'
 
-export {Login,Register,Home,Detail,Single,Cart,Checkout,Cate,CatDetail}
+
+
+export {Login,Register,Home,Detail,Single,Cart,Checkout,Cate,CatDetail,}

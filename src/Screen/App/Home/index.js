@@ -11,13 +11,22 @@ import AsyncStorage from '@react-native-community/async-storage';
 import GetCat from './GraphQLComponent/Cat.js'
 import GetPop from './GraphQLComponent/Popular.js'
 import {connect } from 'react-redux'
+import { SliderBox } from "react-native-image-slider-box";
+
 class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			search: '',
 			user: "",
-			entries: [1, 2, 1, 1, 1, 1, 1, 1, 1]
+			entries: [1, 2, 1, 1, 1, 1, 1, 1, 1],
+			images: [
+				"https://source.unsplash.com/1024x768/?nature",
+				"https://source.unsplash.com/1024x768/?water",
+				"https://source.unsplash.com/1024x768/?girl",
+				"https://source.unsplash.com/1024x768/?tree", // Network image
+				// Local image
+			],
 		};
 		this._bootstrapAsync();
 	}
@@ -45,10 +54,11 @@ class Home extends Component {
 				<HeaderC navigation={this.props.navigation} />
 				<ScrollView style={{ flex: 1 }}>
 					<SearchC />
-					<WelcomeC user={this.state.user} />
+					<SliderBox  images={this.state.images} autoplay={true} circleLoop={true} />
+					{/*<WelcomeC user={this.state.user} />*/}
 					<View style={{ marginLeft: 20, marginRight: 20 }}>
 						<View style={{ flexDirection: 'row', marginBottom: 20 }}>
-							<View style={{ flex: 1 }}>
+							<View style={{ flex: 1,marginTop:10 }}>
 								<Text
 									style={{
 										color: colors.color,
@@ -61,7 +71,7 @@ class Home extends Component {
 								</Text>
 							</View>
 
-							<View style={{ flexDirection: 'row-reverse' }}>
+							<View style={{ flexDirection: 'row-reverse',marginTop:10 }}>
 								<Text
 									style={{
 										color: colors.themeC,
@@ -89,7 +99,7 @@ class Home extends Component {
 					<Divider style={{ backgroundColor: colors.color,opacity:0.1, marginTop: 20, marginBottom: 20 }} />
 					<GetPop navigation={this.props.navigation} orderby={3}  render={this._renderItem1} />
 
-				
+
 				</ScrollView>
 			</View>
 		);

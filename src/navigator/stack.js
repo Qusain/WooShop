@@ -9,9 +9,11 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { connect } from 'react-redux'
-import { createSwitchNavigator, createStackNavigator, createDrawerNavigator, createAppContainer } from "react-navigation";
-import {Login,Register,Home,Detail,Single,Cart,Checkout,Cate,CatDetail} from '../Screen/index'
-
+import { createSwitchNavigator, createStackNavigator, createAppContainer } from "react-navigation";
+import { createDrawerNavigator } from 'react-navigation-drawer';
+import {Login,Register,Home,Cart,CatDetail,Checkout,Single,Detail,Cate} from '../Screen/index';
+import {DrawerScreen} from "../Screen/App/drawerScreen";
+import {ContactUs} from "../Screen/App/contactUs";
 
 const AuthStack = createStackNavigator({
   Login,Register
@@ -22,15 +24,22 @@ const AuthStack = createStackNavigator({
   }
 });
 
-const AppStack = createStackNavigator({
-  Home,Detail,Single,Cart,Checkout,Cate,CatDetail
-}, {
-    headerMode: 'none',
-    navigationOptions: {
-      headerVisible: false,
-    }
-  });
 
+
+
+
+ const AppStack = createDrawerNavigator({
+         Cart,Home,CatDetail,Detail,Single,Checkout,ContactUs,Cate,
+         //if we want to show screens we will define them here.
+
+
+     },
+     {
+         //contentComponent used for custom drawer menu
+         contentComponent:DrawerScreen ,
+         drawerWidth: 200
+     }
+ );
 
 ///
 

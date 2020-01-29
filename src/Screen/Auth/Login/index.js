@@ -71,9 +71,16 @@ class Login extends Component {
 		});
 
 }
+sendUserName=(login)=>{
+		const name={
+			name:this.state.username,
+		};
+		AsyncStorage.setItem('Key',JSON.stringify(name));
+	this.LoginNow(login);
+}
 
 	render() {
-		
+
 		return (
 			<View style={style.ViewStyle}>
 				<StatusBar backgroundColor={colors.background} barStyle={colors.stutsbarContent} />
@@ -110,7 +117,7 @@ class Login extends Component {
 						placeholderTextColor={colors.color}
 					/>
 
-					<GButton loading={this.state.ll} Text={'LOGIN'} onPress={() => this.LoginNow(login)} />
+					<GButton loading={this.state.ll} Text={'LOGIN'} onPress={() => this.sendUserName(login)} />
 					</View>
 					)}
 
@@ -154,6 +161,6 @@ const mapStateToProps = (state /*, ownProps*/) => {
 	return {
 	}
   }
-  
+
 export default connect(
 	mapStateToProps  )(Login);
