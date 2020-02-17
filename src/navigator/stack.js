@@ -29,7 +29,7 @@ const AuthStack = createStackNavigator({
 
 
  const AppStack = createDrawerNavigator({
-         Cart,Home,CatDetail,Detail,Single,Checkout,ContactUs,Cate,
+         Home,CatDetail,Detail,Cart,Single,Checkout,ContactUs,Cate,
          //if we want to show screens we will define them here.
 
 

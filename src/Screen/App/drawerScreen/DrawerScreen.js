@@ -140,7 +140,7 @@ export class DrawerScreen extends React.Component {
                         </Text></View></TouchableOpacity>
                 <TouchableOpacity
                     style={{width: '100%', marginTop: 25, flexDirection: 'row'}}
-                    onPress={() =>this.logout() }>
+                    onPress={() =>this.logout()}>
                     <View style={{width: '20%', alignItems: 'center', justifyContent: 'center'}}>
                         <Icon name={'logout'} color={'#ff5300'} size={20}/>
                     </View>
